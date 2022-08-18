@@ -13,6 +13,10 @@ sites:
     url: https://thissitedoesnotexist.koj.co
   - name: Flush 
     url: https://flush.com
+  - name: slabs
+    url: https://thewearableinternet.com
+  - name: wrong
+    url: https://hritik.com
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
