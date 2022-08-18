@@ -21,7 +21,7 @@ status-website:
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   baseUrl: /uptime-testing
   logoUrl: https://uploads-ssl.webflow.com/60c92ce167b91f55c48259ca/60e883fa2ffc2286619f0430_RapidInnovationsLogo.svg
-  name: Upptime
+  name: Web-Status
   introTitle: "**Service-check**"
   introMessage: This is a status page which shows status of web urls. 
   navbar:
