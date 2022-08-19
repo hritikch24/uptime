@@ -1,25 +1,18 @@
 # Change these first
 owner: hritikch24 # Your GitHub organization or username, where this repository lives
-repo: uptime-testing # The name of this repository
+repo: uptime-test # The name of this repository
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
+
   - name: Flush 
     url: https://flush.com
   - name: slabs
     url: https://thewearableinternet.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  baseUrl: /uptime-testing
+  baseUrl: /uptime
   logoUrl: https://uploads-ssl.webflow.com/60c92ce167b91f55c48259ca/60e883fa2ffc2286619f0430_RapidInnovationsLogo.svg
   name: Web-Status
   introTitle: "**Service-check**"
