@@ -5,13 +5,13 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-    - name: Fetch Latest PR Number
-      id: latest_pr_number
-      run: |
-        PR_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          "https://api.github.com/repos/${{ github.repository }}/pulls?state=all" \
-          | jq -r 'map(.number) | max')
-        echo "Latest PR Number: $PR_NUMBER"
+       - name: Fetch Latest PR Number
+         id: latest_pr_number
+         run: |
+             PR_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+             "https://api.github.com/repos/${{ github.repository }}/pulls?state=all" \
+             | jq -r 'map(.number) | max')
+             echo "Latest PR Number: $PR_NUMBER"
        - name: Check PR Merge
          run: |
              PR_AUTHOR=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
