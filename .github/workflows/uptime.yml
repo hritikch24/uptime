@@ -18,7 +18,10 @@ jobs:
           
        - name: Check PR Merge
          run: |
+             PR_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+             "https://api.github.com/repos/${{ github.repository }}/pulls?state=all" \
+             | jq -r 'map(.number) | max')
              PR_AUTHOR=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-             "https://api.github.com/repos/${{ github.repository }}/pulls/${{ steps.latest_pr_number.outputs.PR_NUMBER }}" \
+             "https://api.github.com/repos/${{ github.repository }}/pulls/${{PR_NUMBER }}" \
              | jq -r .user.login)
              echo "PR Author: $PR_AUTHOR"
