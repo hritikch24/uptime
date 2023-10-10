@@ -17,6 +17,7 @@ jobs:
          run: echo "PR_NUMBER=${{ steps.latest_pr_number.outputs.PR_NUMBER }}" >> $GITHUB_ENV
           
        - name: Check PR Merge
+         id: author
          run: |
              export PR_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              "https://api.github.com/repos/${{ github.repository }}/pulls?state=all" \
@@ -25,3 +26,11 @@ jobs:
              "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER" \
              | jq -r .user.login)
              echo "PR Author: $PR_AUTHOR"
+             echo "::set-output name author::$PR_AUTHOR"
+       - name: test
+         run: echo ${{ steps.author.outputs.author }}
+       - name: send req
+         uses: trstringer/manual-approval@v1
+         with:
+          secret: ${{ github.TOKEN }}
+          approvers: ${{ steps.author.outputs.author }}
