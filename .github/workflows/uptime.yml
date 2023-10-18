@@ -1,4 +1,4 @@
-name: Pull Request Comment Trigger Example
+name: Pull Request Comment Trig
 on: 
   workflow_dispatch:
 
