@@ -1,5 +1,6 @@
 name: Pull Request Comment Trigger Example
-on: [push, pull_request]
+on: 
+  workflow_dispatch:
 
 jobs:
   hello:
